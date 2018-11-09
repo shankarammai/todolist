@@ -5,8 +5,11 @@ public class TodoList {
     /*
      * Add a new item to the list, given a description and priority.
      */
+	List<TodoListItem> listofitems=new ArrayList<>();
     public void addItem(String description, int priority) {
         // TODO
+    	TodoListItem item = new TodoListItem(description,priority );
+    	listofitems.add(item);
     }
     
     /*
@@ -14,7 +17,7 @@ public class TodoList {
      */
     public TodoListItem getItem(int i) {
         // TODO
-        return null;
+        return listofitems.get(i);
     }
     
     /*
@@ -22,7 +25,7 @@ public class TodoList {
      */
     public int size() {
         // TODO
-        return 0;
+        return listofitems.size();
     }
     
     /*
@@ -31,7 +34,17 @@ public class TodoList {
      */
     public TodoListItem findFirstNotDone() {
         // TODO
-        return null;
+    	TodoListItem myitem = null;
+    	for (int i=0; i<listofitems.size();i++) {
+    		myitem=listofitems.get(i);
+    		if(myitem.isDone()) {
+    			continue;
+    		}
+    		else {
+    			return myitem;
+    		}
+    	}
+    	return myitem;
     }
     
     /*
