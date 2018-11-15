@@ -79,6 +79,15 @@ public class TodoList {
      */
     public List<String> search(String text) {
         // TODO
-        return null;
+    	List<String> searchresult=new ArrayList<>();
+    	TodoListItem myitem;
+    	for (int i=0; i<listofitems.size();i++) {
+    		myitem=listofitems.get(i);
+    		if (myitem.getDescription().contains(text)) {
+    			searchresult.add(myitem.getDescription());
+    		}
     }
+
+    return searchresult;
+}
 }
