@@ -54,15 +54,19 @@ public class TodoList {
     public TodoListItem findHighestPriorityNotDone() {
         // TODO
     	TodoListItem myitem = null;
+    	TodoListItem currenthighestnotdone= null;
     	int highestpriority=0;
     	for (int i=0; i<listofitems.size();i++){
     		myitem=listofitems.get(i);
     		if(myitem.isDone()) {
-    			myitem=null;
+    			myitem=currenthighestnotdone;
     			continue;}
     		else {
-    			if (highestpriority<myitem.getPriority()) {
+    			
+    			if (myitem.getPriority()>highestpriority) {
+    				System.out.println(myitem.getPriority());
     				highestpriority=myitem.getPriority();
+    				myitem=currenthighestnotdone;
     			}
     		}
     		}
