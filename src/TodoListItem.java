@@ -1,7 +1,7 @@
 public class TodoListItem {
-String description;
-int priority;
-boolean isdone;
+private String description;
+private int priority;
+private boolean isdone;
 	public TodoListItem(String description, int priority) {
 		// TODO Auto-generated constructor stub
 		this.description=description;

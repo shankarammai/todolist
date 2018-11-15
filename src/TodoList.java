@@ -38,10 +38,10 @@ public class TodoList {
     	for (int i=0; i<listofitems.size();i++) {
     		myitem=listofitems.get(i);
     		if(myitem.isDone()) {
-    			continue;
-    		}
+    			myitem=null;
+    			continue;}
     		else {
-    			return myitem;
+    			break;
     		}
     	}
     	return myitem;
@@ -53,7 +53,20 @@ public class TodoList {
      */
     public TodoListItem findHighestPriorityNotDone() {
         // TODO
-        return null;
+    	TodoListItem myitem = null;
+    	int highestpriority=0;
+    	for (int i=0; i<listofitems.size();i++){
+    		myitem=listofitems.get(i);
+    		if(myitem.isDone()) {
+    			myitem=null;
+    			continue;}
+    		else {
+    			if (highestpriority<myitem.getPriority()) {
+    				highestpriority=myitem.getPriority();
+    			}
+    		}
+    		}
+        return myitem;
     }
     
     /*
